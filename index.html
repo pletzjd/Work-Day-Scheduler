@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/CSS/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,11 +28,60 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+
+    <div class="col-11 container">
       <!-- Timeblocks go here -->
+      <form class="row" name="nineAM">
+        <div class="time-block">09:00 am</div>
+        <textarea type="text" name="nineAMEntry" id="nineAMEntry" class="description"></textarea>
+        <button id="nineAMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="tenAM">
+        <div class="time-block">10:00 am</div>
+        <textarea type="text" name="tenAMEntry" id="tenAMEntry" class="description"></textarea>
+        <button id="tenAMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="elevenAM">
+        <div class="time-block">11:00 am</div>
+        <textarea type="text" name="elevenAMEntry" id="elevenAMEntry" class="description"></textarea>
+        <button id="elevenAMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="twelvePM">
+        <div class="time-block">12:00 pm</div>
+        <textarea type="text" name="twelvePMEntry" id="twelvePMEntry" class="description"></textarea>
+        <button id="twelvePMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="onePM">
+        <div class="time-block">01:00 pm</div>
+        <textarea type="text" name="onePMEntry" id="onePMEntry" class="description"></textarea>
+        <button id="onePMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="twoPM">
+        <div class="time-block">02:00 pm</div>
+        <textarea type="text" name="twoPMEntry" id="twoPMEntry" class="description"></textarea>
+        <button id="twoPMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="threePM">
+        <div class="time-block">03:00 pm</div>
+        <textarea type="text" name="threePMEntry" id="threePMEntry" class="description"></textarea>
+        <button id="threePMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="fourPM">
+        <div class="time-block">04:00 pm</div>
+        <textarea type="text" name="fourPMEntry" id="fourPMEntry" class="description"></textarea>
+        <button id="fourPMSubmit" class="saveBtn">save</button>
+      </form>
+      <form class="row" name="fivePM">
+        <div class="time-block">05:00 pm</div>
+        <textarea type="text" name="fivePMEntry" id="fivePMEntry" class="description"></textarea>
+        <button id="fivePMSubmit" class="saveBtn">save</button>
+      </form>
+      
+      
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
