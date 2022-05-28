@@ -1,78 +1,78 @@
 //Button definitions
-let nineAMSubmit = document.getElementById('nineAMSubmit');
-let tenAMSubmit = document.getElementById('tenAMSubmit');
-let elevenAMSubmit = document.getElementById('elevenAMSubmit');
-let twelvePMSubmit = document.getElementById('twelvePMSubmit');
-let onePMSubmit = document.getElementById('onePMSubmit');
-let twoPMSubmit = document.getElementById('twoPMSubmit');
-let threePMSubmit = document.getElementById('threePMSubmit');
-let fourPMSubmit = document.getElementById('fourPMSubmit');
-let fivePMSubmit = document.getElementById('fivePMSubmit');
+let nineAMSubmit = $('#nineAMSubmit');
+let tenAMSubmit = $('#tenAMSubmit');
+let elevenAMSubmit = $('#elevenAMSubmit');
+let twelvePMSubmit = $('#twelvePMSubmit');
+let onePMSubmit = $('#onePMSubmit');
+let twoPMSubmit = $('#twoPMSubmit');
+let threePMSubmit = $('#threePMSubmit');
+let fourPMSubmit = $('#fourPMSubmit');
+let fivePMSubmit = $('#fivePMSubmit');
 //Textarea defintions
-let nineAMEntry = document.getElementById('nineAMEntry');
-let tenAMEntry = document.getElementById('tenAMEntry');
-let elevenAMEntry = document.getElementById('elevenAMEntry');
-let twelvePMEntry = document.getElementById('twelvePMEntry');
-let onePMEntry = document.getElementById('onePMEntry');
-let twoPMEntry = document.getElementById('twoPMEntry');
-let threePMEntry = document.getElementById('threePMEntry');
-let fourPMEntry = document.getElementById('fourPMEntry');
-let fivePMEntry = document.getElementById('fivePMEntry');
+let nineAMEntry = $('#nineAMEntry');
+let tenAMEntry = $('#tenAMEntry');
+let elevenAMEntry = $('#elevenAMEntry');
+let twelvePMEntry = $('#twelvePMEntry');
+let onePMEntry = $('#onePMEntry');
+let twoPMEntry = $('#twoPMEntry');
+let threePMEntry = $('#threePMEntry');
+let fourPMEntry = $('#fourPMEntry');
+let fivePMEntry = $('#fivePMEntry');
 //Current date definition
-let date = document.getElementById('currentDay')
+let date = $('#currentDay')
 
 
 function saveSchedule9(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('nine',nineAMEntry.value)
+    localStorage.setItem('nine',nineAMEntry.val())
 }
 
 function saveSchedule10(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('ten',tenAMEntry.value)
+    localStorage.setItem('ten',tenAMEntry.val())
 }
 
 function saveSchedule11(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('eleven',elevenAMEntry.value)
+    localStorage.setItem('eleven',elevenAMEntry.val())
 }
 
 function saveSchedule12(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('twelve',twelvePMEntry.value)
+    localStorage.setItem('twelve',twelvePMEntry.val())
 }
 
 function saveSchedule1(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('one',onePMEntry.value)
+    localStorage.setItem('one',onePMEntry.val())
 }
 function saveSchedule2(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('two',twoPMEntry.value)
+    localStorage.setItem('two',twoPMEntry.val())
 }
 
 function saveSchedule3(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('three',threePMEntry.value)
+    localStorage.setItem('three',threePMEntry.val())
 }
 
 function saveSchedule4(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('four',fourPMEntry.value)
+    localStorage.setItem('four',fourPMEntry.val())
 }
 
 function saveSchedule5(event){
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem('five',fivePMEntry.value)
+    localStorage.setItem('five',fivePMEntry.val())
 }
 
 function init(){
@@ -81,95 +81,95 @@ function init(){
     date.textContent = today
     //checks local storage for previous entries and adds them to the page if there were some
     if(localStorage.getItem('nine')!==null){
-        nineAMEntry.value = localStorage.getItem('nine');
+        nineAMEntry.val(localStorage.getItem('nine'));
     }
     if(localStorage.getItem('ten')!==null){
-        tenAMEntry.value = localStorage.getItem('ten');
+        tenAMEntry.val(localStorage.getItem('ten'));
     }
     if(localStorage.getItem('eleven')!==null){
-        elevenAMEntry.value = localStorage.getItem('eleven');
+        elevenAMEntry.val(localStorage.getItem('eleven'));
     }
     if(localStorage.getItem('twelve')!==null){
-        twelvePMEntry.value = localStorage.getItem('twelve');
+        twelvePMEntry.val(localStorage.getItem('twelve'));
     }
     if(localStorage.getItem('one')!==null){
-        onePMEntry.value = localStorage.getItem('one');
+        onePMEntry.val(localStorage.getItem('one'));
     }
     if(localStorage.getItem('two')!==null){
-        twoPMEntry.value = localStorage.getItem('two');
+        twoPMEntry.val(localStorage.getItem('two'));
     }
     if(localStorage.getItem('three')!==null){
-        threePMEntry.value = localStorage.getItem('three');
+        threePMEntry.val(localStorage.getItem('three'));
     }
     if(localStorage.getItem('four')!==null){
-        fourPMEntry.value = localStorage.getItem('four');
+        fourPMEntry.val(localStorage.getItem('four'));
     }
     if(localStorage.getItem('five')!==null){
-        fivePMEntry.value = localStorage.getItem('five');
+        fivePMEntry.val(localStorage.getItem('five'));
     }
     //color codes each textarea based on the current time
     if(moment().format('H') === 9){
-        nineAMEntry.classList.add('present')
+        nineAMEntry.addClass('present')
     }else if(moment().format('H')>9){
-        nineAMEntry.classList.add('past')
+        nineAMEntry.addClass('past')
     }else{
-        nineAMEntry.classList.add('future')
+        nineAMEntry.addClass('future')
     }
     if(moment().format('H') === 10){
         tenAMEntry.classList.add('present')
     }else if(moment().format('H')>10){
-        tenAMEntry.classList.add('past')
+        tenAMEntry.addClass('past')
     }else{
-        tenAMEntry.classList.add('future')
+        tenAMEntry.addClass('future')
     }
     if(moment().format('H') === 11){
-        elevenAMEntry.classList.add('present')
+        elevenAMEntry.addClass('present')
     }else if(moment().format('H')>11){
-        elevenAMEntry.classList.add('past')
+        elevenAMEntry.addClass('past')
     }else{
-        elevenAMEntry.classList.add('future')
+        elevenAMEntry.addClass('future')
     }
     if(moment().format('H') === 12){
-        twelvePMEntry.classList.add('present')
+        twelvePMEntry.addClass('present')
     }else if(moment().format('H')>12){
-        twelvePMEntry.classList.add('past')
+        twelvePMEntry.addClass('past')
     }else{
-        twelvePMEntry.classList.add('future')
+        twelvePMEntry.addClass('future')
     }
     if(moment().format('H') === 13){
-        onePMEntry.classList.add('present')
+        onePMEntry.addClass('present')
     }else if(moment().format('H')>13){
-        onePMEntry.classList.add('past')
+        onePMEntry.addClass('past')
     }else{
-        onePMEntry.classList.add('future')
+        onePMEntry.addClass('future')
     }
     if(moment().format('H') === 14){
-        twoPMEntry.classList.add('present')
+        twoPMEntry.addClass('present')
     }else if(moment().format('H')>14){
-        twoPMEntry.classList.add('past')
+        twoPMEntry.addClass('past')
     }else{
-        twoPMEntry.classList.add('future')
+        twoPMEntry.addClass('future')
     }
     if(moment().format('H') === 15){
-        threePMEntry.classList.add('present')
+        threePMEntry.addClass('present')
     }else if(moment().format('H')>15){
-        threePMEntry.classList.add('past')
+        threePMEntry.addClass('past')
     }else{
-        threePMEntry.classList.add('future')
+        threePMEntry.addClass('future')
     }
     if(moment().format('H') === 16){
-        fourPMEntry.classList.add('present');
+        fourPMEntry.addClass('present');
     }else if(moment().format('H')>16){
-        fourPMEntry.classList.add('past');
+        fourPMEntry.addClass('past');
     }else{
-        fourPMEntry.classList.add('future');
+        fourPMEntry.addClass('future');
     }
     if(moment().format('H') === 17){
-        fivePMEntry.classList.add('present')
+        fivePMEntry.addClass('present')
     }else if(moment().format('H')>17){
-        fivePMEntry.classList.add('past')
+        fivePMEntry.addClass('past')
     }else{
-        fivePMEntry.classList.add('future')
+        fivePMEntry.addClass('future')
     }
 
 }
@@ -177,12 +177,12 @@ function init(){
 init()
 
 
-nineAMSubmit.addEventListener('click',saveSchedule9);
-tenAMSubmit.addEventListener('click',saveSchedule10);
-elevenAMSubmit.addEventListener('click',saveSchedule11);
-twelvePMSubmit.addEventListener('click',saveSchedule12);
-onePMSubmit.addEventListener('click',saveSchedule1);
-twoPMSubmit.addEventListener('click',saveSchedule2);
-threePMSubmit.addEventListener('click',saveSchedule3);
-fourPMSubmit.addEventListener('click',saveSchedule4);
-fivePMSubmit.addEventListener('click',saveSchedule5);
+nineAMSubmit.on('click',saveSchedule9);
+tenAMSubmit.on('click',saveSchedule10);
+elevenAMSubmit.on('click',saveSchedule11);
+twelvePMSubmit.on('click',saveSchedule12);
+onePMSubmit.on('click',saveSchedule1);
+twoPMSubmit.on('click',saveSchedule2);
+threePMSubmit.on('click',saveSchedule3);
+fourPMSubmit.on('click',saveSchedule4);
+fivePMSubmit.on('click',saveSchedule5);
