@@ -18,6 +18,8 @@ let twoPMEntry = document.getElementById('twoPMEntry');
 let threePMEntry = document.getElementById('threePMEntry');
 let fourPMEntry = document.getElementById('fourPMEntry');
 let fivePMEntry = document.getElementById('fivePMEntry');
+//Current date definition
+let date = document.getElementById('currentDay')
 
 
 function saveSchedule9(event){
@@ -74,6 +76,9 @@ function saveSchedule5(event){
 }
 
 function init(){
+    //Sets the p element in the header to display the current date
+    let today = moment().format('dddd MMMM Do, YYYY')
+    date.textContent = today
     //checks local storage for previous entries and adds them to the page if there were some
     if(localStorage.getItem('nine')!==null){
         nineAMEntry.value = localStorage.getItem('nine');
