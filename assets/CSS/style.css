@@ -13,8 +13,6 @@ textarea {
   padding: 10px;
 }
 
-
-
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -29,7 +27,6 @@ textarea {
 }
 
 .time-block {
-  align-self: center;
   text-align: center;
   border-radius: 15px;
   width:max-content;
@@ -39,7 +36,7 @@ textarea {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
-  width: max-content;
+  width: fit-content;
 }
 
 .hour {
